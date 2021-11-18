@@ -11,9 +11,6 @@ features = table.feature.unique()
 
 feature_labels = [i.replace("_", " ").title() for i in features]
 feature_dict = dict(zip(feature_labels, features))
-
-st.set_page_config(layout="wide")
-
 st.title("Trackman what does good look like?")
 
 feature_label = st.sidebar.selectbox("Select Feature: ", feature_labels)
