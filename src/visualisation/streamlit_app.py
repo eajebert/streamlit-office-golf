@@ -2,7 +2,9 @@ import pandas as pd
 import streamlit as st
 import plotly.express as px
 
-table = pd.read_csv("data/processed/test_2.csv")
+table = pd.read_csv("../private-data/processed/test_2.csv")
+
+st.set_page_config(layout="wide")
 
 players = table.player.unique()
 features = table.feature.unique()
