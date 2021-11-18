@@ -2,7 +2,7 @@ import pandas as pd
 import streamlit as st
 import plotly.express as px
 
-table = pd.read_pickle("../../data/processed/test_2.pkl")
+table = pd.read_pickle("data/processed/test_2.pkl")
 
 players = table.player.unique()
 features = table.feature.unique()
