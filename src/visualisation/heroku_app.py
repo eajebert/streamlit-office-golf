@@ -12,7 +12,7 @@ server = (
 app.title = "IPL Dashboard"  # Assigning title to be displayed on tab
 
 # Reading the dataset
-df = pd.read_csv("data/processed/IPL Ball-by-Ball 2008-2020.csv")
+df = pd.read_csv("../../data/processed/IPL Ball-by-Ball 2008-2020.csv")
 
 # cleaning the data
 team_names = {
