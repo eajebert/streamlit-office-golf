@@ -2,12 +2,7 @@ import pandas as pd
 import streamlit as st
 import plotly.express as px
 
-import src.models.models as models
-
-
-table = pd.read_pickle(
-    "../../../launch-monitor-analysis/data/processed/Streamlit_Tables/test_2.pkl"
-)
+table = pd.read_pickle("../../../launch-monitor-analysis/data/processed/test_2.pkl")
 
 players = table.player.unique()
 features = table.feature.unique()
