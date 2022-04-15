@@ -18,15 +18,15 @@ def add_shots_to_container(container, hole_no):
             shots_dict["tee_lie"] = start_lie
             
             shot_end_lie = container.selectbox("End Lie", possible_end_lies)
-            units = "ft" if shot_end_lie in ["Green", "Bermuda"] else "yds"
+            unit = "ft" if shot_end_lie in ["Green", "Bermuda"] else "yds"
             end_distance = container.number_input(f"Shot end distance ({units}) ")
         else:
             shot_end_lie = container.selectbox("End Lie", possible_end_lies)
-            units = "ft" if shot_end_lie in ["Green", "Bermuda"] else "yds"
+            unit = "ft" if shot_end_lie in ["Green", "Bermuda"] else "yds"
             end_distance = container.number_input(f"Shot end distance ({units}) ")
     end_distances.append(end_distance)
     end_lies.append(shot_end_lie)
-    units.append(units)
+    units.append(unit)
     shot_details = {"shot_end_lie":end_lies, "shot_end_distance":end_distances, "distance_units":units}
     shots_dict["shot_details"] = shot_details
     return shots_dict
