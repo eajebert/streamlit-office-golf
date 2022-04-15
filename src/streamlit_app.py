@@ -19,11 +19,12 @@ def add_shots_to_container(container, hole_no):
             
             shot_end_lie = container.selectbox("End Lie", possible_end_lies)
             unit = "ft" if shot_end_lie in ["Green", "Bermuda"] else "yds"
-            end_distance = container.number_input(f"Shot end distance ({units}) ")
+            end_distance = container.number_input(f"Shot end distance ({unit}) ")
         else:
             shot_end_lie = container.selectbox("End Lie", possible_end_lies)
             unit = "ft" if shot_end_lie in ["Green", "Bermuda"] else "yds"
-            end_distance = container.number_input(f"Shot end distance ({units}) ")
+            end_distance = container.number_input(f"Shot end distance ({unit}) ")
+    
     end_distances.append(end_distance)
     end_lies.append(shot_end_lie)
     units.append(unit)
@@ -41,8 +42,8 @@ hole_dict = {
 
 round_shots = {}
 
-for hole_no in hole_dict:
-    cont = hole_dict[hole_no]
+for hole_no in range(1, no_holes_played+1):
+    cont = st.container()
     cont.write(f"Hole No. {hole_no}")
     shots_dict = add_shots_to_container(cont, hole_no)
     round_shots["hole_id"] = hole_no
