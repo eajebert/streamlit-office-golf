@@ -8,6 +8,8 @@ with st.sidebar:
 
 possible_end_lies = ["Fairway", "Green", "In The Hole", "Bermuda", "Recovery", "Kitchen"]
 possible_start_lies = ["Fairway", "Recovery", "Kitchen"]
+
+@st.cache
 def add_shots_to_container(container, hole_no):
     n_shots = int(
         container.number_input("No. of shots played: ", min_value=1, key=hole_no)
