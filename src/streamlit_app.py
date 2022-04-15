@@ -49,3 +49,10 @@ for hole_no in hole_dict:
     round_shots["hole_details"] = shots_dict
 
 
+with open("shots.json", "w") as file:
+     btn = st.download_button(
+             label="Download shots",
+             data=file,
+             file_name="shots.json",
+           )
+
