@@ -36,10 +36,6 @@ def add_shots_to_container(container, hole_no):
 
 no_holes_played = st.number_input("How many holes are you playing?", min_value=1)
 
-hole_dict = {
-    k + 1: v for k, v in zip(range(no_holes_played), [st.container()] * no_holes_played)
-}
-
 round_shots = {}
 
 for hole_no in range(1, no_holes_played+1):
