@@ -34,7 +34,7 @@ def add_shots_to_container(container, hole_no):
 
 
 
-no_holes_played = st.number_input("How many holes are you playing?", min_value=1)
+no_holes_played = int(st.number_input("How many holes are you playing?", min_value=1))
 
 round_shots = {}
 
