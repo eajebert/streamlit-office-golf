@@ -4,7 +4,7 @@ possible_end_lies = ["Fairway", "Green", "Bermuda", "Recovery", "Kitchen"]
 possible_start_lies = ["Fairway", "Recovery", "Kitchen"]
 
 def add_shots_to_container(container, hole_no):
-    n_shots = container.number_input("No. of shots played: ", min_value=1)
+    n_shots = int(container.number_input("No. of shots played: ", min_value=1))
     shots_dict = {"hole_id":hole_no}
     end_distances, end_lies, units= [], [], []
     for i in range(n_shots):
