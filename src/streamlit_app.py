@@ -13,20 +13,20 @@ def add_shots_to_container(container, hole_no):
     for i in range(n_shots):
 
         if i == 0:
-            start_lie = container.selectbox("Start Lie", possible_start_lies, key=hole_no)
+            start_lie = container.selectbox("Start Lie", possible_start_lies, key=f"start {hole_no}")
             start_distance = container.number_input(
-                "Shot start distance (yds) ", min_value=0, key=hole_no
+                "Shot start distance (yds) ", min_value=0, key=f"start dist {hole_no}"
             )
             shots_dict["hole_yards"] = start_distance
             shots_dict["tee_lie"] = start_lie
 
-            shot_end_lie = container.selectbox("End Lie", possible_end_lies, key=hole_no)
+            shot_end_lie = container.selectbox("End Lie", possible_end_lies, key=f"end lie h:{hole_no} s:{i}")
             unit = "ft" if shot_end_lie in ["Green", "Bermuda"] else "yds"
-            end_distance = container.number_input(f"Shot end distance ({unit}) ", key=hole_no)
+            end_distance = container.number_input(f"Shot end distance ({unit}) ", key=f"end dist h:{hole_no} s:{i}")
         else:
-            shot_end_lie = container.selectbox("End Lie", possible_end_lies, key=hole_no)
+            shot_end_lie = container.selectbox("End Lie", possible_end_lies, key=f"end lie h:{hole_no} s:{i}")
             unit = "ft" if shot_end_lie in ["Green", "Bermuda"] else "yds"
-            end_distance = container.number_input(f"Shot end distance ({unit}) ", key=hole_no)
+            end_distance = container.number_input(f"Shot end distance ({unit}) ", key=f"end dist h:{hole_no} s:{i}")
 
     end_distances.append(end_distance)
     end_lies.append(shot_end_lie)
