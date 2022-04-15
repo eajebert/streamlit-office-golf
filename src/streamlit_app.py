@@ -6,7 +6,7 @@ with st.sidebar:
     format_hole = lambda x: f"Hole {x}"
     hole = st.selectbox("Select hole to edit:", range(1, n_holes+1), format_func=format_hole)
 
-possible_end_lies = ["Fairway", "Green", "Bermuda", "Recovery", "Kitchen"]
+possible_end_lies = ["Fairway", "Green", "In The Hole", "Bermuda", "Recovery", "Kitchen"]
 possible_start_lies = ["Fairway", "Recovery", "Kitchen"]
 def add_shots_to_container(container, hole_no):
     n_shots = int(
