@@ -7,7 +7,7 @@ def add_shots_to_container(container, hole_no):
     n_shots = container.number_input("No. of shots played: ", min_value=1)
     shots_dict = {"hole_id":hole_no}
     end_distances, end_lies, units= [], [], []
-    for i in range(n_shots - 1):
+    for i in range(n_shots):
 
         if i == 0:
             start_lie = container.selectbox("Start Lie", possible_start_lies)
