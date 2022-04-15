@@ -15,22 +15,22 @@ def add_shots_to_container(container, hole_no):
     shots_dict = {"hole_id": hole_no}
     end_distances, end_lies, units = [], [], []
     for i in range(n_shots):
-
+        shot_number = i + 1
         if i == 0:
-            start_lie = container.selectbox("Start Lie", possible_start_lies, key=f"start {hole_no}")
+            start_lie = container.selectbox(f"Shot {shot_number} start lie", possible_start_lies, key=f"start {hole_no}")
             start_distance = container.number_input(
-                "Shot start distance (yds) ", min_value=0, key=f"start dist {hole_no}"
+                f"Shot {shot_number} start distance (yds) ", min_value=0, key=f"start dist {hole_no}"
             )
             shots_dict["hole_yards"] = start_distance
             shots_dict["tee_lie"] = start_lie
 
-            shot_end_lie = container.selectbox("End Lie", possible_end_lies, key=f"end lie h:{hole_no} s:{i}")
+            shot_end_lie = container.selectbox(f"Shot {shot_number} end lie", possible_end_lies, key=f"end lie h:{hole_no} s:{shot_number}")
             unit = "ft" if shot_end_lie in ["Green", "Bermuda"] else "yds"
-            end_distance = container.number_input(f"Shot end distance ({unit}) ", key=f"end dist h:{hole_no} s:{i}")
+            end_distance = container.number_input(f"Shot {shot_number} end distance ({unit}) ", key=f"end dist h:{hole_no} s:{shot_number}")
         else:
-            shot_end_lie = container.selectbox("End Lie", possible_end_lies, key=f"end lie h:{hole_no} s:{i}")
+            shot_end_lie = container.selectbox(f"Shot {shot_number} end lie", possible_end_lies, key=f"end lie h:{hole_no} s:{shot_number}")
             unit = "ft" if shot_end_lie in ["Green", "Bermuda"] else "yds"
-            end_distance = container.number_input(f"Shot end distance ({unit}) ", key=f"end dist h:{hole_no} s:{i}")
+            end_distance = container.number_input(f"Shot {shot_number} end distance ({unit}) ", key=f"end dist h:{hole_no} s:{shot_number}")
 
     end_distances.append(end_distance)
     end_lies.append(shot_end_lie)
